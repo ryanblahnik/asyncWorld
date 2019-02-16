@@ -9,7 +9,7 @@ const weird = () => {
   return new Promise((resolve, reject) => {
     return setTimeout(function() {
       console.log(`11: 'no'`);
-      // console.log("line 30 would never complete\n" +
+      // console.log("line 34 would never complete\n" +
       //   "if we don't resolve or reject");
       reject('14: resolved');
       resolve('15: rejected');
@@ -26,7 +26,12 @@ const promised = () => {
   });
 };
 
-// delayed();
+weird()
+  .then(console.log)
+  .catch(console.log);
+
+// const array = [weird(), promised()];
+// console.log(array);
 
 const example = async () => {
   console.log('28: ', Date.now());
@@ -41,4 +46,4 @@ const example = async () => {
   console.log('41: ', Date.now());
 };
 
-example();
+// example();
