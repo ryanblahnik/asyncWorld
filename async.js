@@ -27,11 +27,15 @@ const promised = () => {
 };
 
 weird()
-  .then(console.log)
-  .catch(console.log);
+  .then((data) => console.log('30: ', data))
+  .catch((err) => console.log('31: ', err));
 
 // const array = [weird(), promised()];
 // console.log(array);
+
+Promise.all([weird(), promised()])
+  .then(console.log)
+  .catch(console.log);
 
 const example = async () => {
   console.log('28: ', Date.now());
